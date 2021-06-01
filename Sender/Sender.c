@@ -6,8 +6,7 @@
 
 float Temperature[MAX_VAL] = {};
 float ChargeRate[MAX_VAL] = {};
-int filevalue = 0;
-int index = 0;
+
 
 Sender_State (*SenderDataRead[])(float Temperature[],float ChargeRate[])={ReadData};
 Sender_State(*SenderOutput[])(float Temperature[],float ChargeRate[])={outputtoconsole};
