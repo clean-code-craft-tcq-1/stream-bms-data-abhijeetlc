@@ -15,7 +15,7 @@ Sender_State(*SenderOutput[])(float Temperature[],float ChargeRate[])={OutToCons
 Sender_State ReadData(float Temperature[],float ChargeRate[])
 {
 
-    float TempVal,ChargeRateVal;
+    float TempVal,ChargeRateVal = 0;
     int Index = 0;
     int Line_Identifier = 1;
 
