@@ -5,12 +5,13 @@
 
 TEST_CASE("To check if file was successfully opened to read") 
 {
- 
+  Sender_InType inputvalue = FileInput ; 
   REQUIRE(inputvalue(inputvalue)== PASS); 
 }
 
 TEST_CASE("test") 
 {
+  Sender_OutType outputvalue = printtoconsole ;
   REQUIRE(outputvalue(outputvalue)== PASS);
   
 }
