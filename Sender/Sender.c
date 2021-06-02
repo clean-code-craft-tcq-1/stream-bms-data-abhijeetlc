@@ -42,7 +42,7 @@ Sender_State ReadData(float Temperature[],float ChargeRate[])
 }
 
 
-Sender_State inputvalue(Sender_InType inputvalue)
+Sender_State InputValue(Sender_InType InVal)
 {
 
     Sender_State FileReadSuccess = FAIL;
@@ -52,7 +52,7 @@ Sender_State inputvalue(Sender_InType inputvalue)
 
 }
 
-Sender_State outputvalue(Sender_OutType outputvalue)
+Sender_State OutputValue(Sender_OutType OutVal)
 {
 
     Sender_State WriteStatus = FAIL;
@@ -61,7 +61,7 @@ Sender_State outputvalue(Sender_OutType outputvalue)
 
 }
 
-Sender_State outputtoconsole(float Temperature[],float ChargeRate[])
+Sender_State OutToConsole(float Temperature[],float ChargeRate[])
 {
     for(int index=0;index<20;index++)
     {
