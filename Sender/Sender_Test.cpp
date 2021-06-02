@@ -9,8 +9,8 @@ TEST_CASE("To check if file was successfully opened to read")
   REQUIRE(inputvalue(inputvalue)== PASS); 
 }
 
-TEST_CASE("To check data is printed on the console") 
+TEST_CASE("test") 
 {
-  REQUIRE(outputtoconsole(outputvalue)== PASS);
+  REQUIRE(outputvalue(outputvalue)== PASS);
   
 }
