@@ -6,6 +6,7 @@
 
 float Temperature[MAX_VAL] = {};
 float ChargeRate[MAX_VAL] = {};
+int linecount = 0;
 
 
 Sender_State (*SenderDataRead[])(float Temperature[],float ChargeRate[])={ReadData};
@@ -15,43 +16,41 @@ Sender_State ReadData(float Temperature[],float ChargeRate[])
 {
 
     float TempVal,ChargeRateVal;
+    int Index = 0;
+    int Line_Identifier = 1;
 
     Sender_State ReadStatus= FAIL;
-    FILE * file=fopen( "Sender_Text.txt" , "r");
+    FILE * file=fopen( "Sender_Text.txt","r");
 	
     if (file==NULL) 
-    {
-      	
-		printf("\t\t**DATA READ FAILURE**\t\t\n");
-		ReadStatus= FAIL;  
+    { 	
+	printf("\t\t**DATA READ FAILURE**\t\t\n");
+	ReadStatus= FAIL;  
     }
-	
     else 
     {
-		for(int linecount=1;fscanf(file, "%f\t\t%f\n", &TempVal,&ChargeRateVal)!=EOF ;linecount++)
-        	   {
-          	
-            		Temperature[linecount]=TempVal;
-            		ChargeRate[linecount]=ChargeRateVal;
-       		    }
+        while(Line_Identifier != EOF)
+         {
+        	Line_Identifier = fscanf(file, "%f\t\t%f\n", &TempVal,&ChargeRateVal);
+            	Temperature[Index]=TempVal;
+            	ChargeRate[Index]=ChargeRateVal;
+		Index++;
+		linecount=Index;
+          }
 	    
         printf("\t\t**DATA READ PASS**\t\t\n");
         ReadStatus= PASS;
       }
     fclose(file);
     return ReadStatus;
-
 }
 
 
 Sender_State InputValue(Sender_InType InVal)
 {
-
     Sender_State FileReadSuccess = FAIL;
     FileReadSuccess=(*SenderDataRead[InVal])(Temperature,ChargeRate);
     return FileReadSuccess;
-
-
 }
 
 Sender_State OutputValue(Sender_OutType OutVal)
@@ -65,9 +64,9 @@ Sender_State OutputValue(Sender_OutType OutVal)
 
 Sender_State OutToConsole(float Temperature[],float ChargeRate[])
 {
-    for(int index=0;index<20;index++)
+    for(int Index=0;Index<linecount;Index++)
     {
-        printf("Temperature value == %f \t ChargeRate value == %f \t\n",Temperature[index],ChargeRate[index]);
+        printf("Temperature value == %f \t ChargeRate value == %f \t\n",Temperature[Index],ChargeRate[Index]);
     }
     return PASS;
 }
