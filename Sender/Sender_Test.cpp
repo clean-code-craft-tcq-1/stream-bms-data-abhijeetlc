@@ -11,6 +11,6 @@ TEST_CASE("To check if file was successfully opened to read")
 
 TEST_CASE("To check data is printed on the console") 
 {
-  REQUIRE(outputtoconsole(UserRequest)== PASS);
+  REQUIRE(outputtoconsole(outputvalue)== PASS);
   
 }
