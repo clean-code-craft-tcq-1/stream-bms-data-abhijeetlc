@@ -19,7 +19,7 @@ typedef enum
 }Sender_State;
 
 typedef enum{
-	printtoconsole
+	PrintToConsole
 }Sender_OutType;
 
 typedef enum{
@@ -33,9 +33,9 @@ typedef enum{
 */
 
 Sender_State ReadData(float Temperature[],float ChargeRate[]);
-Sender_State outputtoconsole(float Temperature[],float ChargeRate[]);
-Sender_State inputvalue(Sender_InType inputvalue);
-Sender_State outputvalue(Sender_OutType outputvalue);
+Sender_State OutToConsole(float Temperature[],float ChargeRate[]);
+Sender_State InputValue(Sender_InType InVal);
+Sender_State OutputValue(Sender_OutType OutVal);
 
 
 /*
