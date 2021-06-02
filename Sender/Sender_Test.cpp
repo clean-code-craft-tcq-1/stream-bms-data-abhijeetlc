@@ -6,7 +6,7 @@
 TEST_CASE("To check if file was successfully opened to read") 
 {
  
-  REQUIRE(ReadData()== PASS); 
+  REQUIRE(inputvalue(inputvalue)== PASS); 
 }
 
 TEST_CASE("To check data is printed on the console") 
