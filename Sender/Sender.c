@@ -1,17 +1,30 @@
+/* **************************************************************************************************
+* File Name   : Sender.c
+* Author      : Abhijeet Chitagubbi
+* Objective   :Stream Temperature and Chargerate value to console after reading from a file.
+* * ************************************************************************************************** */
+
+
+/* **************************************** Standard Header Files **************************************************** */
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 
+/* **************************************** Local Header Files **************************************************** */
 #include "Sender_Header.h"
 
+/* **************************************** Declarations **************************************************** */
 float Temperature[MAX_VAL] = {};
 float ChargeRate[MAX_VAL] = {};
 int linecount = 0;
 
 
+/* **************************************** Function Pointer Array **************************************************** */
 Sender_State (*SenderDataRead[])(float Temperature[],float ChargeRate[])={ReadData};
 Sender_State(*SenderOutput[])(float Temperature[],float ChargeRate[])={OutToConsole};
 
+
+/* **************************************** Read Values from File **************************************************** */
 Sender_State ReadData(float Temperature[],float ChargeRate[])
 {
 
@@ -46,6 +59,7 @@ Sender_State ReadData(float Temperature[],float ChargeRate[])
 }
 
 
+/* **************************************** Input BMS Values  **************************************************** */
 Sender_State InputValue(Sender_InType InVal)
 {
     Sender_State FileReadSuccess = FAIL;
@@ -53,6 +67,8 @@ Sender_State InputValue(Sender_InType InVal)
     return FileReadSuccess;
 }
 
+
+/* **************************************** Output BMS Values **************************************************** */
 Sender_State OutputValue(Sender_OutType OutVal)
 {
 
@@ -61,6 +77,8 @@ Sender_State OutputValue(Sender_OutType OutVal)
     return WriteStatus;
 
 }
+
+/* **************************************** Output to Console **************************************************** */
 
 Sender_State OutToConsole(float Temperature[],float ChargeRate[])
 {
