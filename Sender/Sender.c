@@ -18,24 +18,26 @@ Sender_State ReadData(float Temperature[],float ChargeRate[])
 
     Sender_State ReadStatus= FAIL;
     FILE * file=fopen( "Sender_Text.txt" , "r");
-
-    if (file) {
-        for(int count=0;fscanf(file, "%f\t\t%f\n", &TempVal,&ChargeRateVal)!=EOF ;count++)
-        {
-          
-            Temperature[count]=TempVal;
-            ChargeRate[count]=ChargeRateVal;
-        }
+	
+    if (file==NULL) 
+    {
+      	
+		printf("\t\t**DATA READ FAILURE**\t\t\n");
+		ReadStatus= FAIL;  
+    }
+	
+    else 
+    {
+		for(int linecount=1;fscanf(file, "%f\t\t%f\n", &TempVal,&ChargeRateVal)!=EOF ;linecount++)
+        	   {
+          	
+            		Temperature[linecount]=TempVal;
+            		ChargeRate[linecount]=ChargeRateVal;
+       		    }
 	    
         printf("\t\t**DATA READ PASS**\t\t\n");
         ReadStatus= PASS;
-    }
-	
-	else {
-		
-		printf("\t\t**DATA READ FAILURE**\t\t\n");
-		ReadStatus= FAIL;
-	}
+      }
     fclose(file);
     return ReadStatus;
 
@@ -68,6 +70,4 @@ Sender_State OutToConsole(float Temperature[],float ChargeRate[])
         printf("Temperature value == %f \t ChargeRate value == %f \t\n",Temperature[index],ChargeRate[index]);
     }
     return PASS;
-
-
 }
