@@ -34,7 +34,7 @@ typedef enum{
 
 Sender_State ReadData(float Temperature[],float ChargeRate[]);
 Sender_State outputtoconsole(float Temperature[],float ChargeRate[]);
-Sender_State inputvalue(Sender_InType inputvaluefetch);
+Sender_State inputvalue(Sender_InType inputvalue);
 Sender_State outputvalue(Sender_OutType outputvalue);
 
 
