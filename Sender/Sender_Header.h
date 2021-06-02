@@ -23,7 +23,7 @@ typedef enum{
 }Sender_OutType;
 
 typedef enum{
-	FileInputType
+	FileInput
 }Sender_InType;
 
 /*
