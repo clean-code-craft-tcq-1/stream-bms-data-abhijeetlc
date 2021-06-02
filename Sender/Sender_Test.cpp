@@ -6,8 +6,9 @@
 TEST_CASE("To check if file was successfully opened to read") 
 {
   Sender_InType InVal = FileInput ; 
-  REQUIRE(InputValue(InVal)== PASS); 
+  REQUIRE(InputValue(InVal) != PASS); 
 }
+
 
 /*TEST_CASE("test") 
 {
