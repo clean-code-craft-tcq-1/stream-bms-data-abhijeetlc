@@ -9,7 +9,7 @@ float ChargeRate[MAX_VAL] = {};
 
 
 Sender_State (*SenderDataRead[])(float Temperature[],float ChargeRate[])={ReadData};
-Sender_State(*SenderOutput[])(float Temperature[],float ChargeRate[])={outputtoconsole};
+Sender_State(*SenderOutput[])(float Temperature[],float ChargeRate[])={OutToConsole};
 
 Sender_State ReadData(float Temperature[],float ChargeRate[])
 {
@@ -46,7 +46,7 @@ Sender_State InputValue(Sender_InType InVal)
 {
 
     Sender_State FileReadSuccess = FAIL;
-    FileReadSuccess=(*SenderDataRead[inputvalue])(Temperature,ChargeRate);
+    FileReadSuccess=(*SenderDataRead[InVal])(Temperature,ChargeRate);
     return FileReadSuccess;
 
 
@@ -56,7 +56,7 @@ Sender_State OutputValue(Sender_OutType OutVal)
 {
 
     Sender_State WriteStatus = FAIL;
-    WriteStatus=(*SenderOutput[outputvalue])(Temperature,ChargeRate);
+    WriteStatus=(*SenderOutput[OutVal])(Temperature,ChargeRate);
     return WriteStatus;
 
 }
