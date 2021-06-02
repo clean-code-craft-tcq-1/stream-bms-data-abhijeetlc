@@ -20,7 +20,7 @@ Sender_State ReadData(float Temperature[],float ChargeRate[])
     int Line_Identifier = 1;
 
     Sender_State ReadStatus= FAIL;
-    FILE * file=fopen( "Sender_Text.txt","r");
+    FILE * file=fopen( "/Sender/Sender_Text.txt","r");
 	
     if (file==NULL) 
     { 	
