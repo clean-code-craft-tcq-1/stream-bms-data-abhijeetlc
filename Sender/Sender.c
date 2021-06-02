@@ -27,7 +27,6 @@ Sender_State ReadData(float Temperature[],float ChargeRate[])
             ChargeRate[count]=ChargeRateVal;
         }
 	    
-
         printf("\t\t**DATA READ PASS**\t\t\n");
         ReadStatus= PASS;
     }
