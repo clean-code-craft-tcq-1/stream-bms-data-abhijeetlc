@@ -19,8 +19,7 @@ jobs:
     - name: Install jscpd
       run: sudo npm install -g jscpd
 
-    - name: Check duplications
-      run: jscpd . --min-lines 3 --min-tokens 48 --threshold 0
+
       
     - name: install coverage tool
       run: |
