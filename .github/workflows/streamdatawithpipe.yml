@@ -10,10 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: build
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*   
+      
     - name: Build receiver for pipe
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Receiver/*.c*
 
-    - name: build
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*     
+  
       
     
