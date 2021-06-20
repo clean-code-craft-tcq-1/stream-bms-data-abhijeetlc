@@ -3,7 +3,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include <string.h>
-#include "receiver.h"
+#include "receive.h"
 
 bool  readDataFromConsole(char *valuefromsender) {
   int i=0; //Length of string
