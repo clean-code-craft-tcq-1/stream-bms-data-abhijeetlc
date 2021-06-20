@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
 #define NoOfParamterSet 60 
 #define lengthofParm 15 // As reference from the sender
