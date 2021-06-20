@@ -1,5 +1,5 @@
 
-#define NoOfParamterSet 20 
+#define NoOfParamterSet 60 
 #define lengthofParm 15 // As reference from the sender
 
 #define TemperatureMax  45.f
