@@ -21,7 +21,7 @@ bool  readDataFromConsole(char *valuefromsender) {
 void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 {
   int i = 0, j = 0; 
-  char par[lengthOfParamset]; 
+  char par[lengthofParm]; 
   int paramvalue = 0;  
   while ((valuefromsender_get[i] != '\n')){  
   
