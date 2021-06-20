@@ -15,6 +15,11 @@ jobs:
       
     - name: Build receiver for pipe
       run: gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
+      
+    - name : Sender | Reciever
+        run:|
+         gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
+         g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*   
 
   
       
