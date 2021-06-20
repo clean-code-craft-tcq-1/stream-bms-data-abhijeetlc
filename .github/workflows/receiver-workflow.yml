@@ -12,14 +12,6 @@ jobs:
 
     - name: Install lizard
       run: pip install lizard
-
-    - name: Limit complexity
-      run: $HOME/.local/bin/lizard --CCN 5
-      
-    - name: Install jscpd
-      run: sudo npm install -g jscpd
-
-
       
     - name: install coverage tool
       run: |
