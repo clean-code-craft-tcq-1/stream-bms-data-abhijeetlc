@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Build receiver for pipe
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o receivestream *.c*
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Receiver/*.c*
 
     - name: build
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*     
