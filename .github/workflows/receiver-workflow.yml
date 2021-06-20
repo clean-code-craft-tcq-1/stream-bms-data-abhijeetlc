@@ -1,4 +1,4 @@
-name: Build and Run receiver
+name: Build and Run Receiver
 
 on: [push, pull_request]
 
@@ -10,17 +10,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install lizard
-      run: pip install lizard
-      
     - name: install coverage tool
       run: |
         sudo apt-get update
         sudo apt-get install -y gcovr
-
     - name: build
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Receiver/*.c*
-     
+      
     - name: run
       run: ./testchecker
 
@@ -30,6 +26,6 @@ jobs:
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
       with:
-        name: coverage_receiver
+        name: coverage
         path: ./*.html
         retention-days: 1
