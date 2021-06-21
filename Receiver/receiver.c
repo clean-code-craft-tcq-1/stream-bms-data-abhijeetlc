@@ -25,10 +25,10 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
   int paramvalue = 0;  
   while ((valuefromsender_get[i] != '\n')){  
     
-   // for (j = 0;valuefromsender_get[i] != ';';j++, i++)
-   // {
+    for (j = 0;valuefromsender_get[i] != NULL ;j++, i++)
+   {
       par[j] = valuefromsender_get[i];
-   // }
+   }
     par[j] = '\0'; 
     tempValue[paramvalue] = atof(par);
     printf("Paramter value = %f\n", tempValue[paramvalue]); //for debug purpose
