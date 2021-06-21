@@ -12,9 +12,9 @@ bool  readDataFromConsole(char *valuefromsender) {
   {
     scanf("%s",valuefromsender);
     i = strlen(valuefromsender);
-    j = strtod(valuefromsender);
-    valuefromsender[j] = '\n';
-    valuefromsender[j + 1] = '\0';
+  
+    valuefromsender[i] = '\n';
+    valuefromsender[i + 1] = '\0';
     printf("valuefromsender = %f\n", valuefromsender); //for debug purpose
        return true; 
   }
