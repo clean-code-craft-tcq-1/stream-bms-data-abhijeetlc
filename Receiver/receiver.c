@@ -42,7 +42,7 @@ void Receiver_Read()
   char valuefromsender[lengthofParm];
   float paramMin[lengthofParm] = {TemperatureMax,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
-  int paramSetCounter = 0
+  int paramSetCounter = 0;
   /* Reading the input stream */
   for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
     
