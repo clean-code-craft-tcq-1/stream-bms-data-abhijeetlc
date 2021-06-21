@@ -51,17 +51,17 @@ void Receiver_Read()
     if (ifTrueReadSuccess)
     {
       /* Initialize individual parameter buffer to zero */
-//       float tempValue[lengthofParm] ;
-//       /*Converts data stream to individual parameter data*/
-//       getvalueFromsender(valuefromsender, tempValue);
-//       /* Running loop for each parameter evaluation */
-//       for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
+      float tempValue[lengthofParm] ;
+      /*Converts data stream to individual parameter data*/
+      getvalueFromsender(valuefromsender, tempValue);
+      /* Running loop for each parameter evaluation */
+      for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
         
-//         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
-//         calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
-      }
-//       printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
-//       printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
+        calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
+        calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
+     }
+      printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
+      printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
     }
 
   }
