@@ -11,8 +11,8 @@ bool  readDataFromConsole(char *valuefromsender) {
   {
     scanf("%s",valuefromsender);
     i = strlen(valuefromsender);
-    valuefromsender[i] = '\n';
-    valuefromsender[i + 1] = '\0';
+//     valuefromsender[i] = '\n';
+//     valuefromsender[i + 1] = '\0';
        return true; 
   }
   return false;
