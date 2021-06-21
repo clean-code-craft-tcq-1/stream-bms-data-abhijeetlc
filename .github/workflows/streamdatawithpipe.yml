@@ -17,9 +17,10 @@ jobs:
       run: gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
       
     - name : Sender | Reciever
-        run:|
-         gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
+        run: |
          g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*   
+         gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
+         
 
 
   
