@@ -15,7 +15,7 @@ bool  readDataFromConsole(char *valuefromsender) {
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
-    printf("valuefromsender = %f\n", valuefromsender); //for debug purpose
+    printf("valuefromsender = %f\n", valuefromsender); 
        return true; 
   }
   return false;
