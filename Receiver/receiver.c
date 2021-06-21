@@ -24,23 +24,15 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
   int i = 0, j = 0; 
   char par[lengthofParm]; 
   int parNum = 0;  //count of parameters
-
-     par[j] = valuefromsender_get[i];
+    for (j = 0;valuefromsender_get[i] != NULL;j++, i++)
+    {
+    par[j] = valuefromsender_get[i];
     par[j] = '\0'; //Adding end of string
-    
+    }
     /* Convert string to float number to evaluate further */
     tempValue[parNum] = atof(par);
-    
     printf("Paramter value = %f\n", tempValue[parNum]); //for debug purpose
 
-    /* Iterate to next parameter in the buffer*/ 
-    parNum++; 
-
-    /*Escape Comma separated character*/
-    i++;
-    
-  
-  }
 }
 
 void Receiver_Read()
