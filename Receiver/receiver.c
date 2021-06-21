@@ -21,20 +21,11 @@ bool  readDataFromConsole(char *valuefromsender) {
 void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 {
   
-   int i = 0, j = 0; //index counter
-
-  char par[lengthofParm]; //string for each parameter 
+  int i = 0, j = 0; 
+  char par[lengthofParm]; 
   int parNum = 0;  //count of parameters
 
-  /* Read till we reach end of string */
-  while ((valuefromsender_get[i] != '\n')){
-    
-    /* Read each parameter */
-    for (j = 0;valuefromsender_get[i] != NULL;j++, i++)
-    {
-      par[j] = valuefromsender_get[i];
-    }
-
+     par[j] = valuefromsender_get[i];
     par[j] = '\0'; //Adding end of string
     
     /* Convert string to float number to evaluate further */
