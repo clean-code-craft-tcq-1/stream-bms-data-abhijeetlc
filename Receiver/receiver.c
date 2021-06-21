@@ -60,8 +60,8 @@ void Receiver_Read()
 //         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
 //         calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
       }
-      printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
-      printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
+//       printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
+//       printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
     }
 
   }
