@@ -11,8 +11,8 @@ bool  readDataFromConsole(char *valuefromsender) {
   {
     scanf("%s",valuefromsender);
     i = strlen(valuefromsender);
-//     valuefromsender[i] = '\n';
-//     valuefromsender[i + 1] = '\0';
+    valuefromsender[i] = '\n';
+    valuefromsender[i + 1] = '\0';
        return true; 
   }
   return false;
@@ -47,8 +47,8 @@ void Receiver_Read()
   for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
     
     /* Read one input set if the read is successful process parameters further*/
-    bool ifTrueReadSuccess = readDataFromConsole(valuefromsender);
-    if (ifTrueReadSuccess)
+    bool TestActive = readDataFromConsole(valuefromsender);
+    if (TestActive)
     {
       /* Initialize individual parameter buffer to zero */
       float tempValue[lengthofParm] ;
