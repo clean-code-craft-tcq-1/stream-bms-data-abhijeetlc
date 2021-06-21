@@ -85,10 +85,3 @@ void calculateMaxValue(float *paramValue, float *paramValueMax) {
     *paramValueMax = *paramValue;
   }
 }
-#ifdef MAIN
-int main()
-{
-    Receiver_Read();
-    return 0;
-}
-#endif
