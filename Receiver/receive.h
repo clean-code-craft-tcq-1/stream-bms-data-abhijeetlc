@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 #define NoOfParamterSet 60 
-#define lengthofParm 15 // As reference from the sender
+#define lengthofParm 60 // As reference from the sender
 
 #define TemperatureMax  45.f
 #define TemperatureMin  0.f
