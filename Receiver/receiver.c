@@ -3,7 +3,10 @@
 #include <time.h>
 #include <stdbool.h>
 #include <string.h>
+#include <math.h>
 #include "receive.h"
+
+
 
 bool  readDataFromConsole(char *valuefromsender) {
   int i=0; 
@@ -12,7 +15,7 @@ bool  readDataFromConsole(char *valuefromsender) {
   {
     
     scanf("%s",valuefromsender);
-    i = strlen(valuefromsender);
+    i = strtod(valuefromsender);
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
