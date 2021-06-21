@@ -10,9 +10,9 @@ bool  readDataFromConsole(char *valuefromsender) {
  
   if (valuefromsender != NULL)
   {
-    i = strlen(valuefromsender);
+    
     scanf("%s",valuefromsender);
-    //i = strlen(valuefromsender);
+    i = strlen(valuefromsender);
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
@@ -54,11 +54,9 @@ void Receiver_Read()
     {
       
       float tempValue[lengthofParm] ;
-    
       getvalueFromsender(valuefromsender, tempValue);
      
       for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
-        
         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
         calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
     }
