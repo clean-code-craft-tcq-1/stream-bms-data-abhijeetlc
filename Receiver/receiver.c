@@ -51,7 +51,7 @@ void Receiver_Read()
     if (ifTrueReadSuccess)
     {
       /* Initialize individual parameter buffer to zero */
-      float tempValue[lengthofParm] = { 0.f };
+      float tempValue[lengthofParm] ;
       /*Converts data stream to individual parameter data*/
       getvalueFromsender(valuefromsender, tempValue);
       /* Running loop for each parameter evaluation */
