@@ -25,10 +25,10 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
   int paramvalue = 0;  
   while ((valuefromsender_get[i] != '\n')){  
     
-    for (j = 0;valuefromsender_get[i] != ';';j++, i++)
-    {
+   // for (j = 0;valuefromsender_get[i] != ';';j++, i++)
+   // {
       par[j] = valuefromsender_get[i];
-    }
+   // }
     par[j] = '\0'; 
     tempValue[paramvalue] = atof(par);
     printf("Paramter value = %f\n", tempValue[paramvalue]); //for debug purpose
@@ -47,9 +47,9 @@ void Receiver_Read()
   for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
     
     /* Read one input set if the read is successful process parameters further*/
-//     bool ifTrueReadSuccess = readDataFromConsole(valuefromsender);
-//     if (ifTrueReadSuccess)
-//     {
+    bool ifTrueReadSuccess = readDataFromConsole(valuefromsender);
+    if (ifTrueReadSuccess)
+    {
       /* Initialize individual parameter buffer to zero */
       float tempValue[lengthofParm] ;
       /*Converts data stream to individual parameter data*/
@@ -59,7 +59,7 @@ void Receiver_Read()
         
         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
         calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
- //    }
+    }
       printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
       printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
     }
