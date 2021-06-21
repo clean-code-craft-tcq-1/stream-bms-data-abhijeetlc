@@ -7,7 +7,7 @@
 
 bool  readDataFromConsole(char *valuefromsender) {
   int i=0; 
-  int j= 0;
+ 
   if (valuefromsender != NULL)
   {
     scanf("%s",valuefromsender);
@@ -16,7 +16,8 @@ bool  readDataFromConsole(char *valuefromsender) {
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
     printf("valuefromsender = %f\n", valuefromsender); 
-       return true; 
+    return true; 
+    
   }
   return false;
 }
