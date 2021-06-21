@@ -25,7 +25,7 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
   int paramvalue = 0;  
   while ((valuefromsender_get[i] != '\n')){  
     
-    for (j = 0;valuefromsender_get[i] != EOF ;j++, i++)
+    for (j = 0;valuefromsender_get[i] != NULL ;j++, i++)
    {
       par[j] = valuefromsender_get[i];
    }
