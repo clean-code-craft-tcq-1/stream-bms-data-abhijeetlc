@@ -2,6 +2,8 @@
 
 This project is about sending and receiving BMS data.
 
+Documentation: The implementation is adapted in Reciever in C. 
+
 ## Decomposition
 
 At a top level, the program runs in two processes - the sender and the receiver.
