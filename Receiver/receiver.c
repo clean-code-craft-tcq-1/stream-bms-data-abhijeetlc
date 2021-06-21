@@ -10,8 +10,9 @@ bool  readDataFromConsole(char *valuefromsender) {
  
   if (valuefromsender != NULL)
   {
-    scanf("%s",valuefromsender);
     i = strlen(valuefromsender);
+    scanf("%s",valuefromsender);
+    //i = strlen(valuefromsender);
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
