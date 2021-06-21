@@ -39,43 +39,43 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 
 void Receiver_Read()
 {
-  char valuefromsender[lengthofParm];
-  float paramMin[lengthofParm] = {TemperatureMax,SocMAX };
-  float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
-  int paramSetCounter = 0;
-  /* Reading the input stream */
-  for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
+//   char valuefromsender[lengthofParm];
+//   float paramMin[lengthofParm] = {TemperatureMax,SocMAX };
+//   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
+//   int paramSetCounter = 0;
+//   /* Reading the input stream */
+//   for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
     
-    /* Read one input set if the read is successful process parameters further*/
-    bool ifTrueReadSuccess = readDataFromConsole(valuefromsender);
-    if (ifTrueReadSuccess)
-    {
-      /* Initialize individual parameter buffer to zero */
-      float tempValue[lengthofParm] ;
-      /*Converts data stream to individual parameter data*/
-      getvalueFromsender(valuefromsender, tempValue);
-      /* Running loop for each parameter evaluation */
-      for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
+//     /* Read one input set if the read is successful process parameters further*/
+//     bool ifTrueReadSuccess = readDataFromConsole(valuefromsender);
+//     if (ifTrueReadSuccess)
+//     {
+//       /* Initialize individual parameter buffer to zero */
+//       float tempValue[lengthofParm] ;
+//       /*Converts data stream to individual parameter data*/
+//       getvalueFromsender(valuefromsender, tempValue);
+//       /* Running loop for each parameter evaluation */
+//       for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
         
-        calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
-        calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
-      }
-      printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
-      printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
-    }
+//         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
+//         calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
+//       }
+//       printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
+//       printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
+//     }
 
-  }
+//   }
   
-}
+// }
 
-void calculateMinValue(float *paramValue, float *paramValueMin) {
+// void calculateMinValue(float *paramValue, float *paramValueMin) {
    
-     /* Update the min value if current value is less */
-    if (*paramValueMin > *paramValue)
-    {
-      *paramValueMin = *paramValue;
+//      /* Update the min value if current value is less */
+//     if (*paramValueMin > *paramValue)
+//     {
+//       *paramValueMin = *paramValue;
 
-    }
+//     }
 }
 
 void calculateMaxValue(float *paramValue, float *paramValueMax) {
