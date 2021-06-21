@@ -7,12 +7,14 @@
 
 bool  readDataFromConsole(char *valuefromsender) {
   int i=0; 
+  int j= 0;
   if (valuefromsender != NULL)
   {
     scanf("%s",valuefromsender);
     i = strlen(valuefromsender);
-    valuefromsender[i] = '\n';
-    valuefromsender[i + 1] = '\0';
+    j = strtod(valuefromsender);
+    valuefromsender[j] = '\n';
+    valuefromsender[j + 1] = '\0';
     printf("valuefromsender = %f\n", valuefromsender); //for debug purpose
        return true; 
   }
