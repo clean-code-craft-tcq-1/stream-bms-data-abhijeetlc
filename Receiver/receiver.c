@@ -85,3 +85,8 @@ void calculateMaxValue(float *paramValue, float *paramValueMax) {
     *paramValueMax = *paramValue;
   }
 }
+int main()
+{
+    Receiver_Read();
+    return 0;
+}
