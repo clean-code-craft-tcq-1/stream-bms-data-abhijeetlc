@@ -42,9 +42,9 @@ void Receiver_Read()
   char valuefromsender[lengthofParm];
   float paramMin[lengthofParm] = {TemperatureMax,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
-
+  int paramSetCounter = 0
   /* Reading the input stream */
-  for (int paramSetCounter = 0; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
+  for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
     
     /* Read one input set if the read is successful process parameters further*/
     bool ifTrueReadSuccess = readDataFromConsole(valuefromsender);
