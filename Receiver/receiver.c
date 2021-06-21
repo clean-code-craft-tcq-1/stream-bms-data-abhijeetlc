@@ -13,6 +13,7 @@ bool  readDataFromConsole(char *valuefromsender) {
     i = strlen(valuefromsender);
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
+    printf("valuefromsender = %f\n", valuefromsender); //for debug purpose
        return true; 
   }
   return false;
