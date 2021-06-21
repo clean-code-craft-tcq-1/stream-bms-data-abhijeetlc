@@ -6,7 +6,7 @@
 #include "receive.h"
 
 bool  readDataFromConsole(char *valuefromsender) {
-  int i=0; //Length of string
+  int i=0; 
   if (valuefromsender != NULL)
   {
     scanf("%s",valuefromsender);
@@ -20,18 +20,17 @@ bool  readDataFromConsole(char *valuefromsender) {
 
 void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 {
-  
   int i = 0, j = 0; 
   char par[lengthofParm]; 
   int parNum = 0;  //count of parameters
     for (j = 0;valuefromsender_get[i] != NULL;j++, i++)
     {
     par[j] = valuefromsender_get[i];
-    par[j] = '\0'; //Adding end of string
+    par[j] = '\0'; 
     }
     /* Convert string to float number to evaluate further */
     tempValue[parNum] = atof(par);
-    printf("Paramter value = %f\n", tempValue[parNum]); //for debug purpose
+    printf("Paramter value = %f\n", tempValue[parNum]); 
 
 }
 
@@ -48,11 +47,11 @@ void Receiver_Read()
     bool TestActive = readDataFromConsole(valuefromsender);
     if (TestActive)
     {
-      /* Initialize individual parameter buffer to zero */
+      
       float tempValue[lengthofParm] ;
-      /*Converts data stream to individual parameter data*/
+    
       getvalueFromsender(valuefromsender, tempValue);
-      /* Running loop for each parameter evaluation */
+     
       for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
         
         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
@@ -68,7 +67,7 @@ void Receiver_Read()
 
 void calculateMinValue(float *paramValue, float *paramValueMin) {
    
-     /* Update the min value if current value is less */
+   
     if (*paramValueMin > *paramValue)
     {
       *paramValueMin = *paramValue;
@@ -77,7 +76,7 @@ void calculateMinValue(float *paramValue, float *paramValueMin) {
 }
 
 void calculateMaxValue(float *paramValue, float *paramValueMax) {
-  /* Update the maximum value if current value is more */
+ 
   if (*paramValueMax < *paramValue)
   {
     *paramValueMax = *paramValue;
