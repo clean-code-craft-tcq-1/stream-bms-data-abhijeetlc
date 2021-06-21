@@ -40,7 +40,7 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 void Receiver_Read()
 {
   char valuefromsender[lengthofParm];
-  float paramMin[lengthofParm] = {TemperatureMax,SocMAX };
+  float paramMin[lengthofParm] = {TemperatureMin,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
   int paramSetCounter = 0;
   /* Reading the input stream */
@@ -57,8 +57,8 @@ void Receiver_Read()
       /* Running loop for each parameter evaluation */
       for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
         
-//         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
-//         calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
+        calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
+        calculateMaxValue(&tempValue[parameterCount], &paramMax[parameterCount]);
       }
       printf(" Current Min value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
       printf(" Current Max value of Temp : %f, ChargeRate : %f \n ", paramMin[Temperature], paramMin[SOC]);
