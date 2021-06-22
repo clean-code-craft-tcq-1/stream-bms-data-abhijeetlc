@@ -1,0 +1,28 @@
+name: Send data using pipe
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: build
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*   
+      
+    - name: Build receiver for pipe
+      run: gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
+      
+    - name : Sender | Reciever
+      run: |
+         g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker ./Sender/*.c*   
+         gcc -DMAIN -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker1 ./Receiver/*.c
+         
+
+
+  
+      
+    
