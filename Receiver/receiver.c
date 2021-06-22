@@ -26,14 +26,14 @@ bool  readDataFromConsole(char *valuefromsender) {
   return false;
 }
 
-void getvalueFromsender(char *valuefromsender_get, float *tempValue)
+void getvalueFromsender(char *valuefromsender, float *tempValue)
 {
   int i = 0, j = 0; 
   char par[lengthofParm]; 
   int parNum = 0;  //count of parameters
-    for (j = 0;valuefromsender_get[i] != NULL;j++, i++)
+    for (j = 0;valuefromsender[i] != NULL;j++, i++)
     {
-    par[j] = valuefromsender_get[i];
+    par[j] = valuefromsender[i];
     par[j] = '\0'; 
     }
     /* Convert string to float number to evaluate further */
@@ -44,7 +44,7 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 
 void Receiver_Read()
 {
-  char valuefromsender_get[lengthofParm];
+  //char valuefromsender_get[lengthofParm];
   char valuefromsender[lengthofParm];
   float paramMin[lengthofParm] = {TemperatureMin,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
