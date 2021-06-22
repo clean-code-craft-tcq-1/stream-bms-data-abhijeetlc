@@ -15,7 +15,7 @@ bool  readDataFromConsole(char *valuefromsender) {
   {
     
     scanf("%s",valuefromsender);
-    i = strtod(valuefromsender,NULL);
+    i = strlen(valuefromsender,NULL);
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
