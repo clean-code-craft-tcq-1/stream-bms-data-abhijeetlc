@@ -20,7 +20,7 @@ bool  readDataFromConsole(char *valuefromsender) {
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
-    printf("valuefromsender = %f\n", valuefromsender); 
+    printf("valuefromsender = %f\n", *valuefromsender); 
     return true; 
     
 //  }
@@ -53,7 +53,7 @@ void Receiver_Read()
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
   int paramSetCounter = 0;
   /* Reading the input stream */
-  for (paramSetCounter; paramSetCounter < NoOfParamterSet; paramSetCounter++) {
+  for (paramSetCounter; paramSetCounter < 60 ; paramSetCounter++) {
     
     /* Read one input set if the read is successful process parameters further*/
     bool TestActive = readDataFromConsole(valuefromsender);
