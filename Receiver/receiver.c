@@ -10,8 +10,7 @@
 
 bool  readDataFromConsole(char *valuefromsender) {
   int i=0; 
- while (scanf("%s\n", valuefromsender) !=EOF) 
-   {
+
   if (valuefromsender != NULL)
   {
     
@@ -23,18 +22,18 @@ bool  readDataFromConsole(char *valuefromsender) {
    printf("valuefromsender = %f\n", valuefromsender); 
     return true; 
      }
- }
+ 
   return false;
 }
 
-void getvalueFromsender(char *valuefromsender, float *tempValue)
+void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 {
   int i = 0, j = 0; 
   char par[60]; 
   int parNum = 0;  //count of parameters
-    for (j = 0;valuefromsender[i] != NULL;j++, i++)
+    for (j = 0;valuefromsender_get[i] != NULL;j++, i++)
     {
-    par[j] = valuefromsender[i];
+    par[j] = valuefromsender_get[i];
     par[j] = '\0'; 
     }
     /* Convert string to float number to evaluate further */
