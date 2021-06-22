@@ -46,11 +46,11 @@ void getvalueFromsender(char *valuefromsender, float *tempValue)
 void Receiver_Read()
 {
   //char valuefromsender_get[lengthofParm];
-;
-  char valuefromsender[1024];
+
+  float valuefromsender[1024];
   float paramMin[lengthofParm] = {TemperatureMin,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
-  int paramSetCounter = 0;
+  
   /* Reading the input stream */
   
     
