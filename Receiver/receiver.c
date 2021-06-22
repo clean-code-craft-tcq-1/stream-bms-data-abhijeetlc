@@ -28,21 +28,21 @@ bool  readDataFromConsole(char *valuefromsender) {
   return false;
 }
 
-void getvalueFromsender(char *valuefromsender, float *tempValue)
-{
-  int i = 0, j = 0; 
-  char par[60]; 
-  int parNum = 0;  //count of parameters
-    for (j = 0;*valuefromsender[i] != NULL;j++, i++)
-    {
-    par[j] = *valuefromsender[i];
-    par[j] = '\0'; 
-    }
-    /* Convert string to float number to evaluate further */
-    tempValue[parNum] = atof(par);
-    printf("Paramter value = %f\n", tempValue[parNum]); 
+// void getvalueFromsender(char *valuefromsender, float *tempValue)
+// {
+//   int i = 0, j = 0; 
+//   char par[60]; 
+//   int parNum = 0;  //count of parameters
+// //     for (j = 0;*valuefromsender[i] != NULL;j++, i++)
+// //     {
+// //     par[j] = *valuefromsender[i];
+// //     par[j] = '\0'; 
+// //     }
+//     /* Convert string to float number to evaluate further */
+//     tempValue[parNum] = atof(par);
+//     printf("Paramter value = %f\n", tempValue[parNum]); 
 
-}
+// }
 
 void Receiver_Read()
 {
