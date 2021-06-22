@@ -10,9 +10,10 @@
 
 bool  readDataFromConsole(char *valuefromsender) {
   int i=0; 
- 
-  if (valuefromsender != NULL)
-  {
+ while (scanf("%s\n", valuefromsender) !=EOF) 
+   {
+//   if (valuefromsender != NULL)
+//   {
     
     scanf("%s",valuefromsender);
     i = strlen(valuefromsender);
@@ -22,7 +23,8 @@ bool  readDataFromConsole(char *valuefromsender) {
     printf("valuefromsender = %f\n", valuefromsender); 
     return true; 
     
-  }
+//  }
+ }
   return false;
 }
 
@@ -45,7 +47,8 @@ void getvalueFromsender(char *valuefromsender, float *tempValue)
 void Receiver_Read()
 {
   //char valuefromsender_get[lengthofParm];
-  char valuefromsender[lengthofParm];
+  //char InputData[1024];
+  char valuefromsender[1024];
   float paramMin[lengthofParm] = {TemperatureMin,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
   int paramSetCounter = 0;
