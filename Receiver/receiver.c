@@ -20,7 +20,7 @@ bool  readDataFromConsole(char *valuefromsender) {
   
     valuefromsender[i] = '\n';
     valuefromsender[i + 1] = '\0';
-    printf("valuefromsender = %f\n", *valuefromsender); 
+   // printf("valuefromsender = %f\n", *valuefromsender); 
     return true; 
     
 //  }
@@ -31,11 +31,11 @@ bool  readDataFromConsole(char *valuefromsender) {
 void getvalueFromsender(char *valuefromsender, float *tempValue)
 {
   int i = 0, j = 0; 
-  char par[lengthofParm]; 
+  char par[60]; 
   int parNum = 0;  //count of parameters
-    for (j = 0;valuefromsender[i] != NULL;j++, i++)
+    for (j = 0;*valuefromsender[i] != NULL;j++, i++)
     {
-    par[j] = valuefromsender[i];
+    par[j] = *valuefromsender[i];
     par[j] = '\0'; 
     }
     /* Convert string to float number to evaluate further */
