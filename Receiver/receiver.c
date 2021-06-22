@@ -45,7 +45,7 @@ void getvalueFromsender(char *valuefromsender_get, float *tempValue)
 void Receiver_Read()
 {
   //char valuefromsender_get[lengthofParm];
-
+int k= 0;
   float valuefromsender[1024];
   float paramMin[lengthofParm] = {TemperatureMin,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
@@ -57,9 +57,9 @@ void Receiver_Read()
     bool TestActive = readDataFromConsole(valuefromsender);
     if (TestActive)
     {
-      
+      k = strtod(valuefromsender,NULL);
       float tempValue[lengthofParm] ;
-      getvalueFromsender(valuefromsender, tempValue);
+      getvalueFromsender(valuefromsender_get[k], tempValue);
      
       for (int parameterCount = 0; parameterCount< lengthofParm; parameterCount++) {
         calculateMinValue(&tempValue[parameterCount], &paramMin[parameterCount]);
