@@ -46,7 +46,7 @@ void Receiver_Read()
 {
   //char valuefromsender_get[lengthofParm];
 
-  float valuefromsender[1024];
+  float valuefromsender[lengthofParm];
   float paramMin[lengthofParm] = {TemperatureMin,SocMAX };
   float paramMax[lengthofParm] = {TemperatureMax,SOcMin };
   
